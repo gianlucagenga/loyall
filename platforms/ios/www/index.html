@@ -25,6 +25,19 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Hello World</title>
+        
+ 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Multi-Level Push Menu - Demo 1</title>
+                <meta name="description" content="Multi-Level Push Menu: Off-screen navigation with multiple levels" />
+                <meta name="keywords" content="multi-level, menu, navigation, off-canvas, off-screen, mobile, levels, nested, transform" />
+                <meta name="author" content="Codrops" />
+                <link rel="shortcut icon" href="../favicon.ico">
+                    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+                    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+                    <link rel="stylesheet" type="text/css" href="css/icons.css" />
+                    <link rel="stylesheet" type="text/css" href="css/component.css" />
+                    <script src="js/modernizr.custom.js"></script>
     </head>
     <body>
 <!--        <div class="app">
@@ -40,6 +53,43 @@
             app.initialize();
         </script>-->
 
-        ciaooooo
+<div class="container">
+    <!-- Push Wrapper -->
+    <div class="mp-pusher" id="mp-pusher">
+        
+        <!-- mp-menu -->
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <h2><a class="icon icon-user">Nome utente</a></h2>
+                <ul>
+                    <li><a class="icon icon-banknote" href="#">Carte</a></li>
+                    <li><a class="icon icon-tag" href="#">Coupon</a></li>
+                    <li><a class="icon icon-location" href="#">Mappe</a></li>
+                    <li><a class="icon icon-params" href="#">Impostazioni</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /mp-menu -->
+        
+        <p><a href="#" id="trigger" class="menu-trigger">Menu</a></p>
+        
+
+            <ul>
+                <li class="single_cart">
+                    <p><a><img src="img/carta.jpg"></a></p>
+                </li>
+            </ul>
+
+    </div><!-- /pusher -->
+</div><!-- /container -->
+
+
+
+
+<script src="js/classie.js"></script>
+<script src="js/mlpushmenu.js"></script>
+<script>
+    new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+    </script>
     </body>
 </html>
