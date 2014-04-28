@@ -87,25 +87,53 @@
             </ul>
         </div>
         
-        <ul id="list_cart">
-            <li class="single_cart">
-                <p><a><img src="img/carta.jpg"></a></p>
-            </li>
-            <li class="single_cart">
-                <p><a><img src="img/carta.jpg"></a></p>
-            </li>
-            <li class="single_cart">
-                <p><a><img src="img/carta.jpg"></a></p>
-            </li>
-            <li class="single_cart">
-                <p><a><img src="img/carta.jpg"></a></p>
-            </li>
-            <li class="single_cart">
-                <p><a><img src="img/carta.jpg"></a></p>
-            </li>
+        <div id="map"></div>
+        <div id="demo"></div>
+        
+        <script>
+            var doc=document.getElementById("demo");
             
-        </ul>
+            var options = {
+                timeout: 2000
+            };
+        
+            function showPosition(position) {
+                //alert(position);
+                var latlon=position.coords.latitude+","+position.coords.longitude;
             
+                var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+                +latlon+"&zoom=14&size=400x450&sensor=false";
+                document.getElementById("map").innerHTML="<img src='"+img_url+"'>";
+            }
+        
+            function showError(error) {
+                //alert(error.message  + ' - '+ error.code);
+                switch(error.code){
+                    case error.PERMISSION_DENIED:
+                        doc.innerHTML="Request for Geolocation denied by the user."
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        doc.innerHTML="Unavailable location information."
+                        break;
+                    case error.TIMEOUT:
+                        //doc.innerHTML="Location request timed out.";
+                        //var latlon="51.508742,-0.120850";
+                        var latlon="45.464284,9.189034";
+                        var img_url="http://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x450&markers=color:green%7Clabel:A%7C"+latlon+"&sensor=false";
+                        document.getElementById("map").innerHTML="<img src='"+img_url+"'>";
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        doc.innerHTML="UNKNOWN_ERROR."
+                        break;
+                }
+            }
+        
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition,showError, options);
+            }
+        
+        </script>
+        
     </div><!-- /pusher -->
 </div><!-- /container -->
 

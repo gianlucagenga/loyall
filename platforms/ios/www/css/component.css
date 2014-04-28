@@ -27,7 +27,7 @@ html, body, .container, .scroller {
 
 .menu-trigger {
 	position: relative;
-	padding-left: 60px;
+	/* commented by GG padding-left: 60px; */
 	font-size: 0.9em;
 }
 
@@ -37,8 +37,9 @@ html, body, .container, .scroller {
 	left: 0;
 	width: 40px;
 	height: 6px;
+    /* commented by GG
 	background: #fff;
-	box-shadow: 0 6px #34495e, 0 12px #fff, 0 18px #34495e, 0 24px #fff;
+	box-shadow: 0 6px #34495e, 0 12px #fff, 0 18px #34495e, 0 24px #fff; */
 	content: '';
 }
 
