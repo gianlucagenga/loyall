@@ -131,3 +131,16 @@ h1 {
 .single_cart p a img{
     width:97%;
 }
+
+.arrow-right-white {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent; /* left arrow slant */
+    border-top: 10px solid transparent; /* right arrow slant */
+    border-left: 15px solid #FFFFFF; /* bottom, add background color here */
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    top: -8px;
+    margin-right: 16px;
+}
