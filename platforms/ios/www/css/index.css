@@ -50,7 +50,7 @@ body {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
     position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:50%;
+    top:30%;
     height:50px;                   /* text area height */
     width:225px;                   /* text area width */
     text-align:center;
@@ -145,6 +145,10 @@ h1 {
     margin-right: 16px;
 }
 
+div#login_page{
+    position: absolute;
+    top: 40%;
+}
 
 .login_img{
     display: block;
@@ -152,10 +156,28 @@ h1 {
     width: 80%;
 }
 
+.login_img_small{
+    display: block;
+    margin: 20px auto 10px 0;
+    width: 40%;
+    float:left;
+}
+
 .white_line{
     display: block;
-    margin: 0px auto 10px auto;
-    width: 80%;
-    height: 5px;
+    margin: 20px auto 20px auto;
+    width: 75%;
+    height: 1px;
     background-color: white;
+}
+
+#login_registrati{
+    position: relative;
+    font-size: 18px;
+    float: right;
+    margin-top:25px;
+    margin-right:20px;
+    text-decoration:underline;
+    text-transform: none;
+    font-weight: bold;
 }
